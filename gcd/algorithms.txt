@@ -1,0 +1,31 @@
+//Algorithms (pseudo codes) to find the GCD of two numbers
+
+1. Euclid's algorithm
+//INPUT: Two non negative, non both zero integers m and n
+//OUTPUT: GCD of m and n
+while n!= 0 do
+  r <- m mod n
+  m <- n
+  n <- r
+return m
+
+2. Euclid's modified algorithm
+//INPUT: Two non negative, non both zero integers m and n
+//OUTPUT: GCD of m and n
+while n!=0 do
+  if m>n
+    m <- m-n
+  else
+    n <- n-m
+return m
+
+3.Consecutive Integer Checking
+//INPUT: Two positive integers m and n
+//OUTPUT: GCD of m and n
+t <- min(m,n)
+while t>0 do
+  if m%t=0
+    if n%t=0
+      return t
+  else 
+    t <- t-1
