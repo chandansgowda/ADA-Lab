@@ -1,0 +1,8 @@
+set title "ALGORITH NAME" 
+set xrange [10:100]
+set yrange [10:100]
+set xlabel 'input size'
+set ylabel 'operation count'
+set style data line 
+plot "best.txt" using 1:2 title 'best case' ,"worst.txt" using 1:2 title 'worst case' ,"avg.txt" using 1:2 title 'avg case' 
+
