@@ -20,27 +20,27 @@ void dfs(int x){
 	
 	for(int i=0;i<n;i++)
 		if(graph[x][i] && !visited[i])
-			dfs(i);
+			dfs(i);  
 			
-	stack[++stop] = x;
+	stack[++stop] = x; //pushing x to stack and this willl maintain the topological order
 }
 
 
 
 void main(){
 	int i;
-	createGraph();
+	createGraph(); //getting input matrix from user and storing it in graph[][]
 	
 	for(i=0;i<n;i++) 
-		visited[i]=0;
+		visited[i]=0; //initializing visited array to 0 (false)
 	
 	for(i=0;i<n;i++){
 		if (visited[i]==0)
-			dfs(i);
+			dfs(i);  //calling dfs on all unvisited vertices
 	}
 	
 	printf("Topologically sorted order\n");
 	for(i=n-1;i>=0;i--) 
-		printf("%d --> ",stack[i]);
+		printf("%d --> ",stack[i]); //printing stack (taken as array for simplicity) in reverse order
 	
 }
