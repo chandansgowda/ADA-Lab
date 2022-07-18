@@ -16,27 +16,27 @@ void createGraph(){
 
 void main(){
 	int i,j,k, P[10][10];
-	createGraph();
+	createGraph(); //get input to form matrix for the graph
 	
 	printf("Cloning graph...\n");
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
-			P[i][j] = graph[i][j];
+			P[i][j] = graph[i][j]; //copying input matrix to temporary matrix P
 		}
 	}
 	
 	printf("Applying Warshall's Algorithm\n");
-	for(i=0;i<n;i++){
-		for(j=0;j<n;j++){
-			for(k=0;k<n;k++){
-				P[j][k] = (P[j][k] || (P[j][i] && P[i][k]));
+	for(k=0;k<n;k++){
+		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				P[i][j] = (P[i][j] || (P[i][k] && P[k][j])); //updating positions with transitive closures
 			}
 		}
 	}
 	
 	printf("Transitive Closure matrix:\n");
-	for(int i=0;i<n;i++){
-		for(int j=0; j<n;j++){
+	for(i=0;i<n;i++){
+		for(j=0; j<n;j++){
 			printf("%d ",P[i][j]);
 		}
 		printf("\n");	
