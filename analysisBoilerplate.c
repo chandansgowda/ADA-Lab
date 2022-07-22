@@ -4,6 +4,10 @@
 #include <stdlib.h> 
 #include <time.h> //to generate random number based on time
 
+#define START 10 //array size
+#define END 1000
+#define INCREMENT 10 //increment array size after every iteration
+
 int count; //declaring global variable
 
 void algorithmToBeAnalyzed(/*parameters*/){
@@ -23,7 +27,7 @@ void main(){
 	
 	srand(time(0)); //to generate random numbers based on time
 	
-	for(n=10;n<100;n+=10){ //n is the array size and it increases in every iteration
+	for(n=START;n<=END;n+=INCRE){ //n is the array size and it increases in every iteration
 	
 		arr = (int*)malloc(n*sizeof(int)); //dynamically allocating memory
 		
