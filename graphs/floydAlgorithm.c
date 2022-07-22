@@ -29,7 +29,7 @@ void main() {
     printf("Applying Floys Warshall Algo...\n");
     for(k=0;k<n;k++){
         for(i=0;i<n;i++){
-            for(j=0;j<0;j++){
+            for(j=0;j<n;j++){
                 if (mat[i][k] + mat[k][j] < mat[i][j])  //checking if distance from i->j is lesser via k
                     mat[i][j] = mat[i][k] + mat[k][j];  //updating the value
             }
