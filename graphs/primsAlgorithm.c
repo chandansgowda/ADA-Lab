@@ -24,19 +24,22 @@ void main(){
 	visited[0]=1;
 	while(edges<n-1){
 		min=1000;
-		for(i=0;i<n;i++)
-			for(j=0;j<n;j++){
-				if (cost[i][j]<min && !visited[j] && cost[i][j]){
-					min = cost[i][j];
-					a=i;
-					b=j;
+		for(i=0;i<n;i++){
+			if(visited[i]){
+				for(j=0;j<n;j++){
+					if (cost[i][j]<min && !visited[j]){
+						min = cost[i][j];
+						a=i;
+						b=j;
+					}
 				}
 			}
+		}
 			
-			printf("%d -> %d : Cost-%d\n",a,b,min);
-			min_cost+=min;
-			visited[b]=1;
-			edges++;
+		printf("%d -> %d : Cost-%d\n",a,b,min);
+		min_cost+=min;
+		visited[b]=1;
+		edges++;
 	}
 	
 	printf("Minimum Cost: %d\n",min_cost);
